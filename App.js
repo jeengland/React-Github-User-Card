@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import UserCard from './components/UserCard';
+
 class App extends React.Component {
     constructor() {
         super()
@@ -16,7 +18,7 @@ class App extends React.Component {
     }
     render() {
        return (
-          <h1>Hello World</h1>
+          <UserCard user={this.state.data} />
        )
     }
 }
