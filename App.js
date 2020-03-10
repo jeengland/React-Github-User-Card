@@ -2,6 +2,11 @@ import React from 'react';
 import axios from 'axios';
 
 import UserCard from './components/UserCard';
+import Typography from '@material-ui/core/Typography';
+
+import Container from '@material-ui/core/Container';
+
+import './App.css'
 
 class App extends React.Component {
     constructor() {
@@ -27,10 +32,15 @@ class App extends React.Component {
     }
     render() {
         return (
-            <React.Fragment>
-                <UserCard user={this.state.data} />
+            <Container className='container' maxWidth='md'>
+                <Typography variant='h4' component='h1'>Usercard for {this.state.data.name}</Typography>
+                <UserCard className='user' user={this.state.data} />
+                
+                <Typography variant='h5' component='h2'>Followers</Typography>
+                <div className='followers'>
                 {this.state.followers.map((follower) => <UserCard user={follower}/>)}
-            </React.Fragment>
+                </div>
+            </Container>
        )
     }
 }

@@ -1,0 +1,27 @@
+.container {
+    background-color: #696969;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.followers {
+    display: flex;
+    flex-wrap: wrap;
+}
+h1 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 3% 0;
+}
+h2 {
+    padding: 2% 0;
+}
+body {
+    margin: 0;
+    background-color: #3F3F3F;
+}
+img{ 
+    max-width: 100%;
+}
