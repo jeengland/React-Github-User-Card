@@ -1,22 +1,26 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar';
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 
 const UserCard = (props) => {
     const user = props.user;
     return (
-        <div className='card'>
-            <h2>{user.login}</h2>
-            <img src={user.avatar_url} alt={`${user.login} profile picture`} title={`${user.login} profile picture`} />
-            <div className='description'>
-                <p>{user.name}</p>
-                <p>{user.bio}</p>
-                <p>{user.location}</p>
-            </div>
-            <div className='stats'>
-                <p>Repositories: {user.public_repos}</p>
-                <p>Followers: {user.followers}</p>
-                <p>Following: {user.following}</p>
-            </div>
-        </div>
+        <Card raised>
+            <CardHeader title={user.name} avatar={<Avatar src={user.avatar_url} alt={user.name} title={user.name}/>} />
+            <CardContent>
+                <Typography>{user.login}</Typography>
+                <Typography>{user.bio}</Typography>
+                <Typography>{user.location}</Typography>
+                <Typography>Repositories: {user.public_repos}</Typography>
+                <Typography>Followers: {user.followers}</Typography>
+                <Typography>Following: {user.following}</Typography>
+            </CardContent>
+        </Card>
     )
 }
 
